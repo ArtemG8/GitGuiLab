@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: sans-serif; padding: 30px; }
+        .section { margin-bottom: 20px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+        button { margin: 5px; padding: 5px 10px; cursor: pointer; }
+        img { margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Интерактивная веб-страница</h1>
+
+
+    <div class="section">
+        <h3>1.1 Изменение текста GIT LAB change</h3>
+        <p id="demo">Исходный текст параграфа.</p>
+        <button onclick="document.getElementById('demo').innerHTML = 'Текст изменён!'">Изменить текст кнопки</button>
+    </div>
+
+
+    <div class="section">
+        <h3>1.2 Свет и Видимость</h3>
+        
+        <img id="myImage" src="pic_bulboff.gif" alt="Лампочка" width="100" height="180">
+        <br>
+        <button onclick="turnOn()">Включить свет</button>
+        <button onclick="turnOff()">Выключить свет</button>
+        <br>
+        <button onclick="hideText()">Скрыть текст</button>
+        <button onclick="showText()">Показать текст</button>
+    </div>
+
+
+    <div class="section">
+        <h3>1.3-1.4 Функция из внешнего файла</h3>
+        <button onclick="changeText()">Выполнить функцию</button>
+    </div>
+
+
+    <div class="section">
+        <h3>1.5 Вывод данных</h3>
+        <button onclick="showAlert()">Показать Alert</button>
+        <button onclick="showMath()">Показать 5 + 7</button>
+        <p id="mathResult"></p>
+    </div>
+
+
+    <script src="script.js"></script>
+
+    
+    <script>
+       
+        window.onload = function() {
+            document.getElementById('demo').innerHTML = "Привет, это JavaScript!";
+            
+            
+            console.log("Страница загружена для преподавателя Арины Евгеньевны!");
+        };
+
+        function turnOn() {
+            document.getElementById('myImage').src = "Pic_bulbon.gif";
+        }
+        function turnOff() {
+            document.getElementById('myImage').src = "pic_bulboff.gif";
+        }
+
+        function hideText() {
+            document.getElementById('demo').style.display = "none";
+        }
+        function showText() {
+            document.getElementById('demo').style.display = "block";
+        }
+
+
+        function showAlert() {
+            alert("Вы нажали кнопку!");
+        }
+        function showMath() {
+            document.getElementById('mathResult').innerHTML = 5 + 7;
+        }
+    </script>
+</body>
+</html>
